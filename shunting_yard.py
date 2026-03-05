@@ -1,10 +1,4 @@
-priorite = {
-            "*":2,
-            "/":2,
-            "%":2,
-            "+":3,
-            "-":3
-}
+
 
 
 def tokenize(depart:str)-> list[str]:
@@ -53,5 +47,20 @@ def infix_to_postfix(tokens: list[str])-> list[str]:
     return liste_finale
 
 def evaluate_postfix(tokens:list[str])-> float:
-    return None
+    pile = []
+    for token in tokens:
+        if token.isdigit():
+            pile.append(float(token))
+        else:
+            b = pile.pop()
+            a = pile.pop()
+            if token == "+":
+                pile.append(a +b)
+            elif token == "-":
+                pile.append(a-b)
+            elif token == "*":
+                pile.append(a*b)
+            elif token == "/":
+                pile.appen(a/b)
+    return pile[0]
 
