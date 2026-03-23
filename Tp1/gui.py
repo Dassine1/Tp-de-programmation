@@ -1,7 +1,7 @@
 import tkinter as tk
-from shunting_yard import tokenize
-from shunting_yard import infix_to_postfix
-from shunting_yard import evaluate_postfix    
+from Tp1.shunting_yard import tokenize
+from Tp1.shunting_yard import infix_to_postfix
+from Tp1.shunting_yard import evaluate_postfix    
 def cliquer():
     try:
         depart = champ_nom.get()
